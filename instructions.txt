@@ -1,0 +1,35 @@
+Tetris, 11.05.2020
+ * Nimi: Matias Nurmi
+ * Opiskelijanumero: 286031
+ * Käyttäjätunnus: nurmim
+ * Sähköposti: matias.nurmi@tuni.fi
+
+Pelin tavoite:
+Pelissä tavoitteena on saada mahtumaan mahdollisimman monta palikkaa pelialueelle. Koska täydet rivit eivät katoa, on peli nopea. Peli päättyy, kun pelialueen yläosaan ei mahdu uutta palikkaa.
+
+Käyttöohjeet:
+Uuden pelin voi aloittaa start -painikkeesta, jolloin palikat alkavat yksi kerrallaan tippua ylhäältä alas. Tippuvaa palikkaa voit siirtää vasemmalle näppäimellä A ja oikealle näppäimellä D. Näppäimestä S palikka tippuu suoraan niin alas kuin kyseisestä kohdasta voi pudota. Peli päättyy, kun uutta palikkaa ei voi lisätä laudalle. Tällöin kello pysähtyy. Pelialueen vieressä ilmoitetaan pelialueelle lisättyjen palikkojen lukumäärä. Reset -painikkeesta voit aloittaa uuden pelin, joilloin pelialue ja laskurit nollataan. Quit -painikkeesta ohjelman voi sulkea.
+
+Toiminnallisuus:
+Ohjelmassa on vektori, jonka alkoina on vektori, jolla luodaan pelialueesta taulukko. Tästä taulukosta selviää, voiko palikkaa siirtää haluttuun suuntaan vai estääkö jo aikaisempi palikka siirron. Eli jos taulukossa siirrettävässä koordinaatissa on toisen palikan osa (taulukon arvo kohdassa on 1), ei siirtoa voida suorittaa. Myös siirto pelialueelta ulkopuolelle tarkistetaan ja estetään tarvittaessa. Alaspäin putoamisessa siirtymisen estyminen merkitsee palikan paikalleen jämähtämistä ja uuden palikan luomista ylös pudottamista varten. Mahdottomassa sivuttaissiirrossa siirtoa ei toteuteta. Aina ennen siirtoa tarkistetaan sen mahdollisuus. 
+Aina palikan jämähtäessä tarkistetaan, voidaanko peliä jatkaa.
+Palikan kerralla pudottaminen hoidetaan pudottamalla palikkaa loopissa yhden alaspäin kunnes pudottaminen ei ole mahdollista.
+
+Painikkeet, tietotaulut ja näppäimet:
+A-näppäin ~ Siirtää palikkaa vasemmalle.
+S-näppäin ~ Siirtää palikan täysin alas.
+D-näppäin ~ Siirtää palikkaa oikealle.
+Blocks ~ Pelialueelle lisättyjen palikoiden lukumäärä.
+Min ~ Peliin kuluneet minuutit.
+Sec ~ Peliin kuluneet sekuntit.
+Start ~ Käynnistä peli.
+Reset ~ Aloita peli alusta.
+Quit ~ Poistu pelistä.
+
+Lisäominaisuudet:
+1 ~ Pelistä löytyy kaikki seistemän palikkaa.
+3 ~ Palikkaa voi siirtää sivulle ennen kuin se jämähtää.
+5 ~ Pelissä on kello, joka näkyy pelin aikana.
+6 ~ Pelissä lasketaan jämähtäneiden palikoiden lukumäärää.
+9 ~ Pelissä on Reset -painike. Voidaan pelata yhdellä käynnistyksellä useasti.
+13 ~ Näppäimellä S palikka putoaa kerralla alimalle mahdolliselle tasolle.
